@@ -19,8 +19,7 @@ var Game = (function(){
 
   Game.prototype.listen = function(){
     window.addEventListener('deviceorientation', function(data){
-      console.log('data in listen instance methad>>>>>', data);
-      this.spam.update(data);
+      console.log('data in listen instance method>>>>>', data);
     }.bind(this));
   };
 

@@ -8,7 +8,7 @@ var Asset = (function(){
     var asset = {};
 
     asset.spam = new Image();
-    asset.ball.src = 'img/mail.png';
+    asset.spam.src = 'img/mail.png';
 
     return asset;
   };
