@@ -8,8 +8,13 @@ html
     script(src='lib/ionic/js/ionic.bundle.js')
     script(src='cordova.js')
     script(src='js/app.js')
-  body(ng-app='starter')
+    script(src='js/main_controller.js')
+    script(src='js/game.js')
+    script(src='js/spam.js')
+    script(src='js/asset.js')
+    script(src='js/safeZone.js')
+  body(ng-app='jmp-spamtrek', ng-controller='MainCtrl')
     ion-pane
       ion-header-bar.bar-stable
-        h1.title Spam Trek
+        h1.title {{title}}
       ion-content
