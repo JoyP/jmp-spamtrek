@@ -1,3 +1,5 @@
+/* exported Asset */
+
 var Asset = (function(){
   'use strict';
 

@@ -1,3 +1,5 @@
+/* global Game */
+
 (function(){
   'use strict';
 

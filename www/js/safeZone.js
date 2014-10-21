@@ -1,3 +1,5 @@
+/* exported SafeZone */
+
 var SafeZone = (function(){
   'use strict';
 
@@ -11,5 +13,7 @@ var SafeZone = (function(){
   SafeZone.prototype.draw = function(game){
     game.ctx.rect(this.x, this.y, this.width, this.height);
   };
+
+  return SafeZone;
 
 })();

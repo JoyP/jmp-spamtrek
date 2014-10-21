@@ -1,3 +1,5 @@
+/* exported Game */
+/* global Asset, Spam */
 
 var Game = (function(){
   'use strict';
@@ -19,7 +21,7 @@ var Game = (function(){
 
   Game.prototype.listen = function(){
     window.addEventListener('deviceorientation', function(data){
-      console.log('data in listen instance method>>>>>', data);
+      this.spam.update(data);
     }.bind(this));
   };
 
@@ -34,6 +36,7 @@ var Game = (function(){
 
   Game.prototype.start = function(){
     this.spam = new Spam(this);
+    this.spam.draw(this);
   };
 
   return Game;
