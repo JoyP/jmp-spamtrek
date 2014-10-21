@@ -15,7 +15,7 @@ var Game = (function(){
     this.assets        = Asset.load();
     this.inMailbox     = false;
     this.wrap          = false;
-//    this.spam          = new Spam(this);
+
     this.listen();
   }
 
@@ -27,8 +27,8 @@ var Game = (function(){
 
   Game.prototype.loop = function(timestamp){
     this.clear();
-    this.spam.draw(this);
     this.safeZone.draw(this);
+    this.spam.draw(this);
     window.requestAnimationFrame(this.loop.bind(this));
   };
 
@@ -37,11 +37,11 @@ var Game = (function(){
   };
 
   Game.prototype.start = function(){
-    this.spam = new Spam(this);
-    this.spam.draw(this);
-
     this.safeZone = new SafeZone(this);
     this.safeZone.draw(this);
+
+    this.spam = new Spam(this);
+    this.spam.draw(this);
 
     this.loop();
   };

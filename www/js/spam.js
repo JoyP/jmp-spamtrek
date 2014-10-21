@@ -17,17 +17,17 @@ var Spam = (function(){
   Spam.prototype.update = function(orientation){
     //console.log('orientation in spam.prototype.update>>>>', orientation);
 
-    if(orientation.gamma > 5){
+    if(orientation.gamma > 10){
       this.x += 5;
-    }else if(orientation.gamma < -5){
+    }else if(orientation.gamma < -10){
       this.x -= 5;
     }else{
       this.x = this.x;
     }
 
-    if(orientation.beta > 5){
+    if(orientation.beta > 10){
       this.y += 5;
-    }else if(orientation.beta < -5){
+    }else if(orientation.beta < -10){
       this.y -= 5;
     }else{
       this.y = this.y;
