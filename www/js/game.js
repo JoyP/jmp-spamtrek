@@ -1,5 +1,5 @@
 /* exported Game */
-/* global Asset, Spam */
+/* global Asset, Spam, SafeZone */
 
 var Game = (function(){
   'use strict';
@@ -28,6 +28,7 @@ var Game = (function(){
   Game.prototype.loop = function(timestamp){
     this.clear();
     this.spam.draw(this);
+    this.safeZone.draw(this);
   };
 
   Game.prototype.clear = function(){
@@ -37,6 +38,9 @@ var Game = (function(){
   Game.prototype.start = function(){
     this.spam = new Spam(this);
     this.spam.draw(this);
+
+    this.safeZone = new SafeZone(this);
+    this.safeZone.draw(this);
   };
 
   return Game;

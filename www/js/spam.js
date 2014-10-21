@@ -16,18 +16,29 @@ var Spam = (function(){
 
   Spam.prototype.update = function(orientation){
     console.log('orientation in spam.prototype.update>>>>', orientation);
-    this.x += orientation.gamma;
-    this.y += orientation.beta;
+
+    if(orientation.gamma > 5 || orientation.gamma < -5){
+      this.x += 5;
+    }else{
+      this.x = this.x;
+    }
+
+    if(orientation.beta > 5 || orientation.beta < -5){
+      this.y += 5;
+    }else{
+      this.y = this.y;
+    }
+
     this.cX = this.x + (this.width / 2);
     this.cY = this.y + (this.height / 2);
   };
 
-  Spam.prototype.wrap = function(game){
-    var isLeft = this.x <= this.width,
-        isRight = this.x > game.canvas.width;
-
-    return isLeft, isRight;
-  };
+//  Spam.prototype.wrap = function(game){
+//    var isLeft = this.x <= this.width,
+//        isRight = this.x > game.canvas.width;
+//
+//    return isLeft, isRight;
+//  };
 
   return Spam;
 
