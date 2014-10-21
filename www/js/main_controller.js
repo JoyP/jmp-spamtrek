@@ -6,6 +6,7 @@
   angular.module('jmp-spamtrek')
   .controller('MainCtrl', ['$scope', function($scope){
     $scope.title = 'Spam Trek';
+
     var game     = null;
 
     /*document.addEventListener('deviceready', function(){

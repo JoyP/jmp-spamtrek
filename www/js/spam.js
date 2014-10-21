@@ -8,6 +8,8 @@ var Spam = (function(){
     this.height = 30;
     this.x      = Math.floor(Math.random() * (game.canvas.width - this.width));
     this.y      = Math.floor(Math.random() * ((game.canvas.height- this.height) - (game.canvas.height - this.height * 2)) + (game.canvas.height - this.height * 2));
+    this.cX     = this.x + (this.width / 2);
+    this.cY     = this.y + (this.height / 2);
   }
 
   Spam.prototype.draw = function(game){
@@ -17,17 +19,17 @@ var Spam = (function(){
   Spam.prototype.update = function(orientation){
     //console.log('orientation in spam.prototype.update>>>>', orientation);
 
-    if(orientation.gamma > 10){
+    if(orientation.gamma > 8){
       this.x += 5;
-    }else if(orientation.gamma < -10){
+    }else if(orientation.gamma < -8){
       this.x -= 5;
     }else{
       this.x = this.x;
     }
 
-    if(orientation.beta > 10){
+    if(orientation.beta > 8){
       this.y += 5;
-    }else if(orientation.beta < -10){
+    }else if(orientation.beta < -8){
       this.y -= 5;
     }else{
       this.y = this.y;

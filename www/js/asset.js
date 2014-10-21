@@ -10,7 +10,10 @@ var Asset = (function(){
     var asset = {};
 
     asset.spam = new Image();
-    asset.spam.src = 'img/mail.png';
+    asset.spam.src = 'img/spam.png';
+
+    asset.mailbox = new Image();
+    asset.mailbox.src = 'img/mailbox.jpg';
 
     return asset;
   };

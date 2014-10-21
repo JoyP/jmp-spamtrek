@@ -11,12 +11,14 @@
     <script src="js/main_controller.js"></script>
     <script src="js/game.js"></script>
     <script src="js/spam.js"></script>
+    <script src="js/mailbox.js"></script>
     <script src="js/asset.js"></script>
     <script src="js/safeZone.js"></script>
   </head>
   <body ng-app="jmp-spamtrek" ng-controller="MainCtrl">
     <ion-pane>
       <ion-header-bar class="bar-stable">
+        <button class="button button-clear">{{clock}}</button>
         <h1 class="title">{{title}}</h1>
         <button ng-click="start()" class="button">Start</button>
       </ion-header-bar>
