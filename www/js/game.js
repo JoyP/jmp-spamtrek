@@ -28,7 +28,8 @@ var Game = (function(){
   Game.prototype.loop = function(timestamp){
     this.clear();
     this.spam.draw(this);
-    this.safeZone.draw(this);
+    //this.safeZone.draw(this);
+    window.requestAnimationFrame(this.loop.bind(this));
   };
 
   Game.prototype.clear = function(){
