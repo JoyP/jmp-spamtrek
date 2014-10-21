@@ -7,7 +7,7 @@ var Spam = (function(){
     this.width    = 30;
     this.height   = 30;
     this.x        = Math.floor(Math.random() * (game.canvas.width - this.width));
-    this.y        = Math.floor(Math.random() * (this.height * 2 - this.height) + this.height);
+    this.y        = Math.floor(Math.random() * ((game.canvas.height- this.height) - (game.canvas.height - this.height * 2) + (game.canvas.height + this.height * 2));
   }
 
   Spam.prototype.draw = function(game){
