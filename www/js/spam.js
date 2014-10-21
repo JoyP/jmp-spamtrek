@@ -22,15 +22,15 @@ var Spam = (function(){
     if(orientation.gamma > 8){
       this.x = ((this.x += 5) > game.canvas.width) ? 0 : this.x + 5;
     }else if(orientation.gamma < -8){
-      this.x = ((this.x -= 5) < -this.width) ? (game.canvas.width) : this.x - 5;
+      this.x = ((this.x -= 5) < 0) ? game.canvas.width : this.x - 5;
     }else{
       this.x = this.x;
     }
 
     if(orientation.beta > 8){
-      this.y += 5;
+      this.y = ((this.y += 5) > (game.canvas.height - game.spam.height)) ? (game.canvas.height - game.spam.height) : this.y + 5;
     }else if(orientation.beta < -8){
-      this.y -= 5;
+      this.y = ((this.y -= 5) < 0) ? 0 : this.y - 5;
     }else{
       this.y = this.y;
     }
@@ -38,13 +38,6 @@ var Spam = (function(){
     this.cX = this.x + (this.width / 2);
     this.cY = this.y + (this.height / 2);
   };
-
-//  Spam.prototype.wrap = function(game){
-//    var isLeft = this.x <= this.width,
-//        isRight = this.x > game.canvas.width;
-//
-//    return isLeft, isRight;
-//  };
 
   return Spam;
 
