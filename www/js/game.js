@@ -21,7 +21,7 @@ var Game = (function(){
 
   Game.prototype.listen = function(){
     window.addEventListener('deviceorientation', function(data){
-      this.spam.update(data);
+      this.spam.update(data, this);
     }.bind(this));
   };
 

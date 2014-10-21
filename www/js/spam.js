@@ -16,13 +16,13 @@ var Spam = (function(){
     game.ctx.drawImage(game.assets.spam, this.x, this.y, this.width, this.height);
   };
 
-  Spam.prototype.update = function(orientation){
+  Spam.prototype.update = function(orientation, game){
     //console.log('orientation in spam.prototype.update>>>>', orientation);
 
     if(orientation.gamma > 8){
-      this.x += 5;
+      this.x = ((this.x += 5) > game.canvas.width) ? 0 : this.x + 5;
     }else if(orientation.gamma < -8){
-      this.x -= 5;
+      this.x = ((this.x -= 5) < -this.width) ? (game.canvas.width) : this.x - 5;
     }else{
       this.x = this.x;
     }
